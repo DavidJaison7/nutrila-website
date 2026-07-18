@@ -5,42 +5,36 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Dr. Ananya Sharma",
-      designation: "Director, Aarogyam Clinic",
       review: "Been working with Nutrila for about a year now. Honestly, their manufacturing process is super smooth. They handled our custom vitamin drops without any fuss. Highly recommend if you want zero headache.",
       gender: "female",
       rating: 5
     },
     {
       name: "Rajesh Iyer",
-      designation: "Founder, FitLife India",
       review: "Good turnaround time and decent pricing. Their R&D team helped us fix a flavoring issue with our pre-workout powder that two other manufacturers couldn't figure out. Very satisfied overall.",
       gender: "male",
       rating: 4.5
     },
     {
       name: "Dr. Kavita Desai",
-      designation: "Chief Physician, Wellness First",
       review: "We rely on them for our clinic's in-house probiotic range. Quality has been consistent over the last three batches. Just wish the minimum order quantities for custom packaging were slightly lower, but the product itself is top-notch.",
       gender: "female",
       rating: 4
     },
     {
       name: "Vikram Malhotra",
-      designation: "CEO, NutriCore Supplements",
       review: "An exceptional manufacturing partner! Sourcing quality herbal ingredients is always tough in this market, but Nutrila has managed to keep the standard incredibly high. My customers love the new ashwagandha line.",
       gender: "male",
       rating: 5
     },
     {
       name: "Dr. Rohan Gupta",
-      designation: "Head of Holistic Care Hospital",
       review: "They supply our hospital's post-surgery immunity boosters. Finding a manufacturer with proper cGMP certification who is actually transparent about their sourcing was a relief. Great team to work with.",
       gender: "male",
       rating: 5
     },
     {
       name: "Neha Verma",
-      designation: "Owner, Pure Earth Organics",
       review: "From designing the label to the final formulation, their private label service is just brilliant. They really treat your brand like their own. Couldn't be happier with how our vegan protein turned out.",
       gender: "female",
       rating: 5
@@ -80,8 +74,7 @@ const Testimonials = () => {
                   {testimonial.gender === 'female' ? <UserRound size={26} /> : <User size={26} />}
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-xs md:text-sm text-gray-500">{testimonial.designation}</p>
+                  <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
                 </div>
               </div>
               

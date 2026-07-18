@@ -1,7 +1,16 @@
-import { Mail, Phone, MapPin, Share2, MessageCircle, Globe, Leaf, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Phone, MapPin, Share2, MessageCircle, Globe, Leaf, ChevronDown, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    navigator.clipboard.writeText('https://www.nutrila.in');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <footer className="bg-[#0a0a0a] text-white pt-20 pb-6 relative overflow-hidden">
       {/* Top Left Leaf */}
@@ -15,7 +24,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-16">
           
           {/* Company Info */}
           <div className="space-y-6">
@@ -26,9 +35,13 @@ const Footer = () => {
               Leading nutraceutical manufacturer in India offering premium third-party manufacturing and private label solutions globally.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-green hover:text-white transition-colors duration-300">
-                <Share2 size={16} />
-              </a>
+              <button 
+                onClick={handleShare}
+                title="Copy website link"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-green hover:text-white transition-colors duration-300"
+              >
+                {copied ? <Check size={16} /> : <Share2 size={16} />}
+              </button>
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-green hover:text-white transition-colors duration-300">
                 <MessageCircle size={16} />
               </a>
@@ -58,17 +71,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 tracking-wide">Services</h4>
-            <ul className="space-y-4">
-              <li><Link to="/services/third-party-manufacturing" className="text-gray-400 text-sm hover:text-primary-green transition-colors">Third-Party Manufacturing</Link></li>
-              <li><Link to="/services/private-label" className="text-gray-400 text-sm hover:text-primary-green transition-colors">Private Labeling</Link></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-primary-green transition-colors">Custom Formulation</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-primary-green transition-colors">Packaging Design</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-primary-green transition-colors">Quality Testing</a></li>
-            </ul>
-          </div>
 
           {/* Contact Info */}
           <div>
