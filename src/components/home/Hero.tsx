@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Package, Users, Tag } from 'lucide-react';
+import { Package, Users, Tag, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -67,9 +67,15 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 sm:gap-5 pt-6 lg:pt-8">
-              <a href="#shop" className="relative group overflow-hidden bg-primary-green text-white px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(13,155,77,0.3)] hover:shadow-[0_0_30px_rgba(13,155,77,0.5)] hover:bg-dark-green text-center inline-block w-full sm:w-auto">
-                Explore Products
-              </a>
+              <div className="relative group inline-block w-full sm:w-auto">
+                <button className="flex items-center justify-center gap-2 relative overflow-hidden bg-primary-green text-white px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(13,155,77,0.3)] hover:shadow-[0_0_30px_rgba(13,155,77,0.5)] hover:bg-dark-green text-center w-full sm:w-auto outline-none">
+                  Explore Services <ChevronDown size={18} />
+                </button>
+                <div className="absolute left-0 top-full mt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden py-2 z-50">
+                  <Link to="/services/third-party-manufacturing" className="block px-5 py-3 text-sm font-bold text-gray-700 hover:bg-primary-green/10 hover:text-primary-green transition-colors">Third-Party Manufacturing</Link>
+                  <Link to="/services/private-label" className="block px-5 py-3 text-sm font-bold text-gray-700 hover:bg-primary-green/10 hover:text-primary-green transition-colors">Private Label Solutions</Link>
+                </div>
+              </div>
               <Link to="/contact" className="bg-transparent border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-gray-900 hover:text-white transition-all shadow-lg text-center inline-block w-full sm:w-auto">
                 Contact Us
               </Link>
