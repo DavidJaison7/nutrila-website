@@ -42,9 +42,9 @@ const Footer = () => {
               >
                 {copied ? <Check size={16} /> : <Share2 size={16} />}
               </button>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-green hover:text-white transition-colors duration-300">
+              <Link to="/contact" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-green hover:text-white transition-colors duration-300">
                 <MessageCircle size={16} />
-              </a>
+              </Link>
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-green hover:text-white transition-colors duration-300">
                 <Globe size={16} />
               </a>
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:justify-self-center">
             <h4 className="text-lg font-bold mb-6 tracking-wide">Quick Links</h4>
             <ul className="space-y-4">
               <li><Link to="/" className="text-gray-400 text-sm hover:text-primary-green transition-colors">Home</Link></li>
@@ -73,7 +73,7 @@ const Footer = () => {
 
 
           {/* Contact Info */}
-          <div>
+          <div className="md:justify-self-end">
             <h4 className="text-lg font-bold mb-6 tracking-wide">Contact Us</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-3">
