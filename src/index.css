@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-green: #0D9B4D;
+  --color-secondary-orange: #FAA432;
+  --color-dark-green: #086b34;
+  --color-soft-gray: #f9fafa;
+  --color-bg-white: #ffffff;
+  
+  --font-sans: "Inter", "Oswald", "Roboto", system-ui, sans-serif;
+  --font-royal: "Playfair Display", serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-soft-gray);
+  color: #333333;
+}
